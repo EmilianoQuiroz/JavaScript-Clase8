@@ -140,3 +140,65 @@ container.innerHTML = “<h2>Hola mundo!</h2><p>Lorem ipsum</p>”
 </div>
 */
 //01.17.00
+
+//--- AGREGAR O QUITAR NODOS ---//
+//--- CREACIÓN DE ELEMENTOS ---//
+/*
+Para crear elementos se utiliza la función document.createElement(), y se debe indicar el nombre de etiqueta HTML que representará ese elemento.
+Luego debe agregarse como hijo el nodo creado con append(), al body o a otro nodo del documento actual.
+
+// Crear nodo de tipo Elemento, etiqueta p
+let parrafo = document.createElement("p");
+// Insertar HTML interno
+parrafo.innerHTML = "<h2>¡Hola Coder!</h2>"; 
+// Añadir el nodo Element como hijo de body
+document.body.append(parrafo);
+*/
+
+//--- ELIMINAR ELEMENTOS---//
+/*
+Se pueden eliminar nodos existentes y nuevos. El método remove() permite eliminar un nodo seleccionado del DOM:
+
+let parrafo = document.getElementById("parrafo1");
+//Elminando el propio elemento
+parrafo.remove();
+
+let paises = document.getElementsByClassName("paises");
+//Eliminando el primer elemento de clase paises
+paises[0].remove()
+*/
+
+//--- OBTENER DATOS DE INPUTS ---//
+/*
+Para obtener o modificar datos de un formulario HTML desde JS, podemos hacerlo mediante el DOM. Accediendo a la propiedad value de cada input seleccionado:
+
+//CODIGO HTML DE REFERENCIA
+  <input id = "nombre" type="text">
+  <input id = "edad"   type="number">
+
+//CODIGO JS
+document.getElementById("nombre").value = "HOMERO";
+document.getElementById("edad").value   = 39;
+*/
+
+//---EJEMPLO APLICADO: CREANDO OPCIONES DESDE UN ARRAY ---//
+/*
+//Obtenemos el nodo donde vamos a agregar los nuevos elementos
+let padre = document.getElementById("personas");
+//Array con la información a agregar
+let personas = ["HOMERO","MARGE", "BART", "LISA","MAGGIE"];
+//Iteramos el array con for...of
+for (const persona of personas) {
+    //Creamos un nodo <li> y agregamos al padre en cada ciclo
+    let li = document.createElement("li");
+    li.innerHTML = persona
+    padre.appendChild(li);
+}
+
+El valor .value es utilizado unicamente para los INPUTS
+*/
+
+//--- PLANTILLAS DE TEXTO ---//
+//012216
+
+
