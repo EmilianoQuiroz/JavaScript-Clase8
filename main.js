@@ -199,6 +199,61 @@ El valor .value es utilizado unicamente para los INPUTS
 */
 
 //--- PLANTILLAS DE TEXTO ---//
-//012216
+//--- PLANTILLAS LITERALES ---//
+/*
+En versiones anteriores a ES6, solía emplearse la concatenación para incluir valores de las variables en una cadena de caracteres (string). Esta forma puede ser poco legible ante un gran número de referencias. En JS ES6 que solventa esta situación son los template strings.
+
+let producto = { id: 1,  nombre: "Arroz", precio: 125 };
+let concatenado = "ID : " + producto.id +" - Producto: " + producto.nombre + "$ "+producto.precio;
+let plantilla   = `ID: ${producto.id} - Producto ${producto.nombre} $ ${producto.precio}`;
+//El valor es idéntico pero la construcción de la plantilla es màs sencilla
+console.log(concatenado);
+console.log(plantilla);
+*/
+
+//--- PLANTILLAS LITERALES E innerHTML ---//
+/*
+La plantillas son un medio para incluir variables en la estructura HTML de nodos nuevos o existentes , modificando el innerHTML.
+
+let producto   = { id: 1,  nombre: "Arroz", precio: 125 };
+let contenedor = document.createElement("div");
+//Definimos el innerHTML del elemento con una plantilla de texto
+contenedor.innerHTML = `<h3> ID: ${producto.id}</h3>
+                        <p>  Producto: ${producto.nombre}</p>
+                        <b> $ ${producto.precio}</b>`;
+//Agregamos el contenedor creado al body
+document.body.appendChild(contenedor);
+*/
+
+//--- QUERY SELECTOR ---//
+/*
+El método querySelector() nos permite seleccionar nodos con la misma sintaxis que utilizamos en los selectores de CSS.
+
+<div id=”contenedor”>
+    <p class=”texto”></p>
+</div>
+
+// puedo seleccionar la etiqueta <p> siguiendo la sintaxis de CSS para selectores:
+let parrafo = document.querySelector("#contenedor p")
+// seleccionar sólo el contenedor por id con #
+let contenedor = document.querySelector("#contenedor")
+
+// o por clase:
+parrafo = document.querySelector(".texto")
+
+Lo interesante del querySelector es que también aplica a pseudo-clases de CSS, brindando un nivel más avanzado de precisión:
+
+let radioChecked = document.querySelector(".radio:checked")
+
+Suponiendo que tengo elementos html radio button y quiero seleccionar sólo aquel que esté en checked, ésto lo puedo lograr muy fácil con querySelector y la pseudo-clase :checked de CSS.
+*/
+
+//--- QUERY SELECTOR ALL ---//
+/*
+Query Selector me retorna el primer elemento que coincida con el parámetro de búsqueda, o sea un sólo elemento. Si quiero obtener una colección de elementos puedo utilizar el método querySelectorAll() siguiendo el mismo comportamiento.
+*/
+
+
+
 
 
